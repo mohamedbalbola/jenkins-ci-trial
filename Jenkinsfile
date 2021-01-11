@@ -9,7 +9,7 @@ pipeline {
 
     stage('deploy to server') {
       steps {
-        sh 'cp /var/lib/jenkins/workspace/ipeline-without-jenkinsfile_main/target/vprofile-v2.war /var/lib/tomcat9/webapps/ROOT.war'
+        sh 'sudo cp /var/lib/jenkins/workspace/ipeline-without-jenkinsfile_main/target/vprofile-v2.war /var/lib/tomcat9/webapps/ROOT.war'
       }
     }
 
