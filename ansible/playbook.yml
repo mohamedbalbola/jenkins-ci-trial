@@ -1,13 +1,11 @@
 - name: update web servers
-  hosts: web1
+  hosts: localhost
   become: true
 
   tasks:
-  - name: ensure apache is at the latest version
-    yum:
-      name: httpd
-      state: latest
-  - name: write the apache config file
-    template:
-      src: /srv/httpd.j2
-      dest: /etc/httpd.conf
+  - name: get s3 rule
+    amazon.aws.aws_s3:
+      bucket: se-jenkins-artifactory
+      object: vprofile-V16.war
+      dest: /home/ubuntu/ansible/vprofile-V16.war
+      mode: get
