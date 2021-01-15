@@ -1,6 +1,9 @@
-- hosts: localhost
+- name: Setup Tomcat8 & Deploy Artifact
+  hosts: localhost
+  become: yes
   tasks:
-    - amazon.aws.aws_s3:
+    - name: Download latest VProfile.war from nexus
+      amazon.aws.aws_s3:
         bucket: se-jenkins-artifactory
         object: vprofile-V16.war
         dest: /home/ubuntu/ansible/vprofile-V16.war
