@@ -1,10 +1,7 @@
----
 - hosts: localhost
-
   tasks:
-  - name: get s3 rule
-    amazon.aws.aws_s3:
-      bucket: se-jenkins-artifactory
-      object: vprofile-V16.war
-      dest: /home/ubuntu/ansible/vprofile-V16.war
-      mode: get
+    - amazon.aws.aws_s3:
+        bucket: se-jenkins-artifactory
+        object: vprofile-V16.war
+        dest: /home/ubuntu/ansible/vprofile-V16.war
+        mode: get
