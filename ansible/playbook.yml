@@ -1,6 +1,7 @@
 - name: update web servers
   hosts: localhost
-  
+  remote_user: root
+
   tasks:
   - name: get s3 rule
     amazon.aws.aws_s3:
