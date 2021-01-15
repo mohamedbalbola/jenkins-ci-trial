@@ -1,7 +1,6 @@
 - name: update web servers
   hosts: localhost
-  become: true
-
+  
   tasks:
   - name: get s3 rule
     amazon.aws.aws_s3:
